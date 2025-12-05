@@ -94,7 +94,7 @@ SELECT
     LIMIT 100;
 ```
 
-### 2.3 Alasan Desain 
+### 2.2 Alasan Desain 
 
 #### 1) Index
 
@@ -193,4 +193,5 @@ export function calculateTopResult(
 ````
 
 dan kemudian konfigurasi ini bisa didapatkan dari database misalnya `payment_top_config`, yang kemudian bisa diubah sesuai dengan ketentuan
+
 
