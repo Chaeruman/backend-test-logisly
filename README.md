@@ -102,7 +102,7 @@ SELECT
   Supaya query seperti `SELECT truck_id FROM trucks WHERE license_plate_number = 'B 1234 ABC'` cepat diproses.
 
 - `idx_truck_timestamp (truck_id, timestamp DESC)`  
-  Ini dipakai untuk mencari **lokasi terakhir per truck**. Dengan index ini, database tidak perlu scan semua riwayat, cukup fokus ke kombinasi `truck_id + timestamp` yang terbaru.
+  Index ini dipakai untuk mencari **lokasi terakhir per truck**. Dengan index ini maka tidak perlu menscan seluruh database, cukup fokus ke kombinasi index `truck_id + timestamp` yang terbaru.
 
 - `idx_lat` dan `idx_lng`  
   Dipakai untuk **filter kasar** dengan bounding box (`BETWEEN`). Jadi dari jutaan baris, jadi proses querynya diminimize terlebih dahulu sebelum menghitung jarak yang prosesnya jadi lebih mahal.
@@ -112,12 +112,12 @@ SELECT
 
 ---
 
-#### 2) Alasan memakai bounding box + `ST_Distance_Sphere`?
+#### 2) Alasan memakai bounding box + `ST_Distance_Sphere`
 
 - Bounding box (pakai `latitude` dan `longitude`):
   - dengan hanya membandingkan angka maka bisa membuat query menjadi lebih cepat (`BETWEEN`).
 
-- Setelah itu baru pakai `ST_Distance_Sphere`:
+- Setelah itu baru diquery dengan `ST_Distance_Sphere`:
   - Lebih akurat untuk mengukur jarak berdasarkan radius.
   - Karena sudah difilter dulu dengan bounding box sebelumnya, jumlah baris yang dihitung jaraknya jadi jauh lebih sedikit.
 
@@ -144,9 +144,6 @@ SELECT truck_id, MAX(`timestamp`) AS max_ts
 FROM location_history
 GROUP BY truck_id
 ```
-
-
-
 
 ---
 
@@ -196,6 +193,3 @@ export function calculateTopResult(
 ````
 
 dan kemudian konfigurasi ini bisa didapatkan dari database misalnya `payment_top_config`, yang kemudian bisa diubah sesuai dengan ketentuan
-
-
-
