@@ -1,0 +1,50 @@
+{
+  "name": "test-backend",
+  "version": "1.0.0",
+  "description": "Backend Test at Logisly",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx --watch --env-file .env src/index.ts",
+    "start": "node --env-file .env dist/index.js",
+    "build": "tsc",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chaeruman/backend-test-logisly.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Chaeruman/backend-test-logisly/issues"
+  },
+  "homepage": "https://github.com/Chaeruman/backend-test-logisly#readme",
+  "dependencies": {
+    "date-fns": "^4.1.0",
+    "express": "^5.2.1"
+  },
+  "imports": {
+    "#*": "./src/*"
+  },
+  "devDependencies": {
+    "@tsconfig/node22": "^22.0.5",
+    "@types/express": "^5.0.6",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.10.1",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "jest": "^30.2.0",
+    "prettier": "^3.7.4",
+    "ts-jest": "^29.4.6",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
