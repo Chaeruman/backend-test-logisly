@@ -6,7 +6,7 @@
 
 ---
 
-## 2. Database Design – Nearby Trucks Lookup
+## 2. Database Design
 
 ### 2.1 Skema Tabel
 
@@ -193,3 +193,4 @@ export function calculateTopResult(
 ````
 
 dan kemudian konfigurasi ini bisa didapatkan dari database misalnya `payment_top_config`, yang kemudian bisa diubah sesuai dengan ketentuan
+
