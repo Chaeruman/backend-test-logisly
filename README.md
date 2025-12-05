@@ -139,11 +139,11 @@ Memang bakal ada sedikit duplikasi data, tapi sebagai gantinya:
 
 Potongan:
 
-````sql
+```sql
 SELECT truck_id, MAX(`timestamp`) AS max_ts
 FROM location_history
 GROUP BY truck_id
-
+```
 
 
 
@@ -196,5 +196,6 @@ export function calculateTopResult(
 ````
 
 dan kemudian konfigurasi ini bisa didapatkan dari database misalnya `payment_top_config`, yang kemudian bisa diubah sesuai dengan ketentuan
+
 
 
