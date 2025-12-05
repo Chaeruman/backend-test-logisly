@@ -1,10 +1,9 @@
 import { Router } from "express";
 import sequelize from "@/db/config.js";
-import { loadSQL } from "#utils/load-sql.js";
+import { loadSQL } from "@/utils/load-sql.js";
 
 const router = Router();
 
-// GET /api/trucks/nearby?lat=...&lng=...&radius=...
 router.get("/nearby", async (req, res) => {
   const { lat, lng, radius } = req.query;
 
@@ -14,7 +13,7 @@ router.get("/nearby", async (req, res) => {
     });
   }
 
-  const query = loadSQL("performance.sql");
+  const query = loadSQL("findTrucksWithinRadius.sql");
 
   try {
     const results = await sequelize.query(query, {

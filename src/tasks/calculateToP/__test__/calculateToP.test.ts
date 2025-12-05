@@ -20,16 +20,16 @@ const cases: TopTestCase[] = [
   {
     name: "2. POD capped at 30, total exceeds 45 → final 45",
     baselineTop: 10,
-    podLateDays: 35, // → 30
+    podLateDays: 35,
     epodLateDays: 25,
-    expected: 45, // (10 + 30 + 25 = 65) → 45
+    expected: 45,
   },
   {
     name: "3. Both delays at max, total exceeds 45 → final 45",
     baselineTop: 20,
-    podLateDays: 30, // → 30
-    epodLateDays: 30, // → 30
-    expected: 45, // (20 + 30 + 30 = 80) → 45
+    podLateDays: 30,
+    epodLateDays: 30,
+    expected: 45,
   },
   {
     name: "4. No penalty, baseline only",
@@ -41,7 +41,7 @@ const cases: TopTestCase[] = [
   {
     name: "5. Negative POD treated as 0",
     baselineTop: 5,
-    podLateDays: -2, // → 0
+    podLateDays: -2,
     epodLateDays: 0,
     expected: 5,
   },
@@ -50,14 +50,14 @@ const cases: TopTestCase[] = [
     baselineTop: 15,
     podLateDays: 20,
     epodLateDays: 15,
-    expected: 45, // (15 + 20 + 15 = 50) → 45
+    expected: 45,
   },
   {
     name: "7. POD at max, ePOD zero, total under 45",
     baselineTop: 10,
     podLateDays: 30,
     epodLateDays: 0,
-    expected: 40, // 10 + 30 = 40
+    expected: 40,
   },
   {
     name: "8. Baseline already at max, no penalty",
