@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "root",
+    "password": "password",
+    "database": "logisly_db",
+    "host": "localhost",
+    "dialect": "mariadb"
+  }
+}
