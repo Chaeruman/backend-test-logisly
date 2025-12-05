@@ -112,9 +112,9 @@ SELECT
 
 ---
 
-#### 2) Kenapa pakai bounding box + `ST_Distance_Sphere`?
+#### 2) Alasan memakai bounding box + `ST_Distance_Sphere`?
 
-- Bounding box (pakai `latitude` dan `longitude`) itu:
+- Bounding box (pakai `latitude` dan `longitude`):
   - dengan hanya membandingkan angka maka bisa membuat query menjadi lebih cepat (`BETWEEN`).
 
 - Setelah itu baru pakai `ST_Distance_Sphere`:
@@ -196,4 +196,5 @@ export function calculateTopResult(
 ````
 
 dan kemudian konfigurasi ini bisa didapatkan dari database misalnya `payment_top_config`, yang kemudian bisa diubah sesuai dengan ketentuan
+
 
